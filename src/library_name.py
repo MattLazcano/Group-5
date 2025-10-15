@@ -19,9 +19,9 @@ class LibraryClass:
         self.average_ratings = {}   # book_id -> average_rating
 
 
-     # ----------------------------------------------------
-     # SIMPLE function (5-10 lines) BOOK AVAILABILITY CHECK (Matthew)
-     # ----------------------------------------------------
+    # ----------------------------------------------------
+    # SIMPLE function (5-10 lines) BOOK AVAILABILITY CHECK (Matthew)
+    # ----------------------------------------------------
     def is_book_available(self, title):
         t = title.strip().lower()
         for item in self.catalog:
@@ -30,8 +30,8 @@ class LibraryClass:
             return False
     
     # ----------------------------------------------------
-     # SIMPLE function (5-10 lines) Reminder Scheduling (Matthew)
-     # ----------------------------------------------------
+    # SIMPLE function (5-10 lines) Reminder Scheduling (Matthew)
+    # ----------------------------------------------------
     def schedule_reminder(self, member_id, book_id, due_date):
         if member_id in self.members and any(b["id"] == book_id for b in self.catalog):
             message = f"Reminder: Book ID {book_id} is due on {due_date}."
@@ -117,7 +117,7 @@ class LibraryClass:
     # ----------------------------------------------------
     def reserve_book(self, member_id: str, book_id: str) -> str:
         book = None
-         # First things first - does this book even exist?
+        # First things first - does this book even exist?
         for item in self.catalog:
             if item["id"] == book_id:
                 book = item
