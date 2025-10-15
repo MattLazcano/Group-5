@@ -12,19 +12,19 @@ lib = LibraryClass()
 # -----------------------------
 lib.catalog = [
     {"id": "B1", "title": "Dune", "author": "Frank Herbert", "genre": "sci-fi",
-     "tags": {"sci-fi", "classic", "space"}, "copies_total": 3, "copies_available": 1,
-     "waitlist": ["M2"]},  # Bob waiting for Dune
+    "tags": {"sci-fi", "classic", "space"}, "copies_total": 3, "copies_available": 1,
+    "waitlist": ["M2"]},  # Bob waiting for Dune
     {"id": "B2", "title": "Clean Code", "author": "Robert C. Martin", "genre": "programming",
-     "tags": {"programming", "software", "best-practices"}, "copies_total": 2, "copies_available": 0,
-     "waitlist": ["M3", "M5"]},  # Multiple people waiting for Clean Code
+    "tags": {"programming", "software", "best-practices"}, "copies_total": 2, "copies_available": 0,
+    "waitlist": ["M3", "M5"]},  # Multiple people waiting for Clean Code
     {"id": "B3", "title": "The Hobbit", "author": "J.R.R. Tolkien", "genre": "fantasy",
-     "tags": {"fantasy", "adventure", "classic"}, "copies_total": 4, "copies_available": 2},
+    "tags": {"fantasy", "adventure", "classic"}, "copies_total": 4, "copies_available": 2},
     {"id": "B4", "title": "The Pragmatic Programmer", "author": "Andrew Hunt", "genre": "programming",
-     "tags": {"programming", "craft", "career"}, "copies_total": 3, "copies_available": 1},
+    "tags": {"programming", "craft", "career"}, "copies_total": 3, "copies_available": 1},
     {"id": "B5", "title": "To Kill a Mockingbird", "author": "Harper Lee", "genre": "fiction",
-     "tags": {"fiction", "classic", "literature"}, "copies_total": 2, "copies_available": 2},
+    "tags": {"fiction", "classic", "literature"}, "copies_total": 2, "copies_available": 2},
     {"id": "B6", "title": "1984", "author": "George Orwell", "genre": "fiction",
-     "tags": {"dystopia", "classic", "political"}, "copies_total": 5, "copies_available": 3},
+    "tags": {"dystopia", "classic", "political"}, "copies_total": 5, "copies_available": 3},
 ]
 
 # -----------------------------
@@ -32,8 +32,8 @@ lib.catalog = [
 # -----------------------------
 lib.members = {
     "M1": {"name": "Matthew",  "email": "matthew@example.com", "active": True, "balance": 0.0,
-           "preferences_tags": {"sci-fi", "fantasy"},
-           "preferences_authors": {"Frank Herbert"}},
+        "preferences_tags": {"sci-fi", "fantasy"},
+        "preferences_authors": {"Frank Herbert"}},
     "M2": {"name": "Rood",     "email": "rood@example.com",    "active": True, "balance": 0.0},
     "M3": {"name": "Eliza",    "email": "eliza@example.com",   "active": True, "balance": 0.0},
     "M4": {"name": "Abi",      "email": "abi@example.com",     "active": True, "balance": 0.0},
@@ -46,30 +46,30 @@ lib.members = {
 lib.loans = [
     # Active loans (not yet returned)
     {"member_id": "M1", "book_id": "B1",
-     "borrow_date": "2025-10-05", "due_date": "2025-10-10",
-     "return_date": None, "returned": False},  # Active, not overdue yet
+    "borrow_date": "2025-10-05", "due_date": "2025-10-10",
+    "return_date": None, "returned": False},  # Active, not overdue yet
     {"member_id": "M2", "book_id": "B2",
-     "borrow_date": "2025-09-25", "due_date": "2025-09-30",
-     "return_date": None, "returned": False},  # Active, overdue
+    "borrow_date": "2025-09-25", "due_date": "2025-09-30",
+    "return_date": None, "returned": False},  # Active, overdue
     {"member_id": "M3", "book_id": "B3",
-     "borrow_date": "2025-09-15", "due_date": "2025-09-25",
-     "return_date": None, "returned": False},  # Active, long overdue
+    "borrow_date": "2025-09-15", "due_date": "2025-09-25",
+    "return_date": None, "returned": False},  # Active, long overdue
 
     # Returned on time
     {"member_id": "M4", "book_id": "B4",
-     "borrow_date": "2025-09-10", "due_date": "2025-09-20",
-     "return_date": "2025-09-19", "returned": True},
+    "borrow_date": "2025-09-10", "due_date": "2025-09-20",
+    "return_date": "2025-09-19", "returned": True},
     {"member_id": "M5", "book_id": "B5",
-     "borrow_date": "2025-09-15", "due_date": "2025-09-25",
-     "return_date": "2025-09-25", "returned": True},
+    "borrow_date": "2025-09-15", "due_date": "2025-09-25",
+    "return_date": "2025-09-25", "returned": True},
 
     # Returned late
     {"member_id": "M1", "book_id": "B6",
-     "borrow_date": "2025-09-01", "due_date": "2025-09-10",
-     "return_date": "2025-09-15", "returned": True},
+    "borrow_date": "2025-09-01", "due_date": "2025-09-10",
+    "return_date": "2025-09-15", "returned": True},
     {"member_id": "M2", "book_id": "B3",
-     "borrow_date": "2025-08-20", "due_date": "2025-09-01",
-     "return_date": "2025-09-05", "returned": True},
+    "borrow_date": "2025-08-20", "due_date": "2025-09-01",
+    "return_date": "2025-09-05", "returned": True},
 ]
 
 # -----------------------------
