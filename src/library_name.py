@@ -29,6 +29,7 @@ class LibraryClass:
                 return item["copies_available"] > 0
             return False
     
+
     # ----------------------------------------------------
     # SIMPLE function (5-10 lines) Reminder Scheduling (Matthew)
     # ----------------------------------------------------
@@ -39,6 +40,7 @@ class LibraryClass:
             return True
         return False
     
+
     # ----------------------------------------------------
     # MEDIUM (15–25 lines) Search and Filter Catalog (Matthew)
     # ----------------------------------------------------
@@ -58,6 +60,7 @@ class LibraryClass:
                 results.append(item)
         return results
     
+
     # ----------------------------------------------------
     # COMPLEX (30+ lines) Automated Overdue Notifications (Matthew)
     # ----------------------------------------------------
@@ -110,6 +113,7 @@ class LibraryClass:
             "messages": messages
         }
 
+
     # ----------------------------------------------------
     # SIMPLE function (5-10 lines) RESERVE BOOK (ABI)
     # This is a simple function as well.
@@ -152,6 +156,7 @@ class LibraryClass:
         self.waitlists[book_id].append(member_id)
         return f"No copies available. Member '{member_id}' added to the waitlist for '{book_id}'."
     
+
     # ----------------------------------------------------
     # SIMPLE function (5-10 lines) Book Rating System (ABI)
     # This allow u to rate a book between 1 and 5 stars, and updates the average rating for that book
@@ -197,6 +202,7 @@ class LibraryClass:
     
         return message
     
+
     # ----------------------------------------------------
     # MEDIUM (15–25 lines) Validate ISBN (ABI)
     # This function validate both ISBN-10 and ISBN-13 formats
@@ -266,6 +272,7 @@ class LibraryClass:
         is_valid = (total_sum % 10 == 0)
         return is_valid
     
+
     # ----------------------------------------------------
     # COMPLEX (30+ lines) Generating Borrowing Report (ABI)
     # This function generate a report of borrowing activity
@@ -367,6 +374,7 @@ class LibraryClass:
     
         return report
     
+
     # ----------------------------------------------------
     # Simple Function (5-10 lines) Calculate Due Date (Eliza)
     # Calculate the due date for a borrowed library item.
@@ -402,6 +410,7 @@ class LibraryClass:
         return due_date
         # once we’ve added all valid loan days, return the due date
 
+
     # ----------------------------------------------------
     # SIMPLE Function (5-10 lines) Member Count (Eliza)
     # Return the total number of registered library members.
@@ -429,6 +438,7 @@ class LibraryClass:
 
         return count
         # return the total number of users found
+
 
     # ----------------------------------------------------
     # MEDIUM (15–25 lines) check in/ check out operations (Eliza)
@@ -519,6 +529,7 @@ class LibraryClass:
             raise ValueError("Invalid action. Use 'borrow' or 'return'.")
         # if the user types something other than borrow/return, show an error
 
+
     # ----------------------------------------------------
     # MEDIUM (15–25 lines) Waitlist Management (Eliza)
     # Add users to waitlist when a book is unavailable and notify them when available
@@ -582,6 +593,7 @@ class LibraryClass:
             raise ValueError("Invalid action. Use 'add' or 'notify'.")
         # if the action isn’t one of those two, stop with an error
 
+
     # ----------------------------------------------------
     # SIMPLE Function (5-10 lines)  Format Search Query (Rood)
     # ----------------------------------------------------
@@ -619,6 +631,7 @@ class LibraryClass:
         # Make a nice normalized string from tokens
         return {"original": q or "", "normalized": " ".join(toks), "tokens": toks}
     
+
     # ----------------------------------------------------
     # MEDIUM (15–25 lines)  User Account Management (Rood)
     # ----------------------------------------------------
@@ -739,6 +752,7 @@ class LibraryClass:
         # Unknown action
         raise ValueError(f"Unknown action: {action!r}")
     
+
     # ----------------------------------------------------
     # COMPLEX (30+ lines)  Recommendation System (Rood)
     # ----------------------------------------------------
