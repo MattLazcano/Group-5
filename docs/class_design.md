@@ -34,8 +34,8 @@ Each class interacts with these structures to ensure all operations are synchron
 ## Object Interaction Diagram (Textual Form)
 
 Member ─── borrows ───► Loan ─── references ───► Book
-▲
-└─────────── interacts with Search ───────────────┘
+|▲
+└──────── interacts with Search ────────────┘
 
 
 ---
