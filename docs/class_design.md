@@ -35,7 +35,7 @@ Each class interacts with these structures to ensure all operations are synchron
 
 Member ─── borrows ───► Loan ─── references ───► Book                                                                                  
 ▲                                                                                                                                                 
-└───── interacts with Search ─────────┘
+└─────────── interacts with Search ───────────┘
 
 
 ---
