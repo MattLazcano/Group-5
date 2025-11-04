@@ -8,7 +8,8 @@
 
 ## Project Overview
 
-This project implements a **Library Management System Function Library** that provides core functionality for managing a small digital library.  
+This project implements a **Library Management System Function Library** that provides core functionality for managing a small digital library.
+
 The system supports operations such as **book cataloging, member management, search and recommendations, loan tracking, and rating systems**.
 
 These functions and classes work together to simulate a full backend library system, serving as the foundation for more advanced object-oriented development and future web or database integration.
@@ -35,9 +36,9 @@ Our system addresses these by maintaining **global shared data structures** that
    ```bash
    git clone https://github.com/your-username/library-management-system.git
    cd library-management-system
-No external dependencies required — the project uses only the Python Standard Library.
+2. **No external dependencies required** — the project uses only the Python Standard Library.
 
-Import classes or functions in your code:
+3. **Import classes or functions in your code:**
 
 ```python
 from src.book_class import Book
@@ -116,20 +117,20 @@ The function library contains over 20 integrated utilities, organized across fou
 - `pay_balance()` — Simulates payment processing
 
 ### Search and Recommendation
-- search_catalog() — Keyword, author, and genre search
+- `search_catalog()` — Keyword, author, and genre search
 
-- reserve_book() — Places a member on a waitlist or reserves a copy
+- `reserve_book()` — Places a member on a waitlist or reserves a copy
 
-- waitlist_management() — Adds/removes users from waitlists
+- `waitlist_management()` — Adds/removes users from waitlists
 
-- recommend_books() — Recommends titles based on preferences and tags
+- `recommend_books()` — Recommends titles based on preferences and tags
 
 ### Loan and Reporting
-- calculate_due_date() — Generates loan due dates
+- `calculate_due_date()` — Generates loan due dates
 
-- generate_borrowing_report() — Summarizes borrowing statistics
+- `generate_borrowing_report() — Summarizes borrowing statistics
 
-- automated_overdue_notifications() — Simulates overdue alerts
+- `automated_overdue_notifications()` — Simulates overdue alerts
 
 ## Object-Oriented Design
 The system includes four main classes that encapsulate these functions and maintain consistent state across all operations:
@@ -141,28 +142,28 @@ The system includes four main classes that encapsulate these functions and maint
 | **Search** | Handles catalog search, reservations, and recommendation features | `catalog`, `members`, `waitlists` |
 | **Loan** | Tracks borrowing, due dates, and overdue status | `loans` |
 
-Each class interacts directly with shared global data structures imported from library_functions, ensuring all updates are reflected system-wide.
+Each class interacts directly with shared global data structures imported from `library_functions`, ensuring all updates are reflected system-wide.
 
 ## Team Member Contributions
 ### Matthew Lazcano — Lead Developer & Project Integrator
 - Led the overall development, integration, and debugging of the system
 - Managed GitHub repository, version control, and final code implementation
-- Designed and implemented the Book, Member, Search, and Loan classes
+- Designed and implemented the `Book`, `Member`, `Search`, and `Loan` classes
 - Oversaw function integration, testing, and demo script creation
 - Coordinated bug fixes, code validation, and system synchronization
 
-### Abi [Last Name] — Project Coordinator & Function Developer
+### Abinash Subedi — Project Coordinator & Function Developer
 - Ensured team coordination by organizing meetings, managing deadlines, and maintaining communication
-- Contributed to the development of the Search class and core functions including:
-reserve_book, rate_book, validate_code, validate_isbn10_format, validate_isbn13_format, and generate_borrowing_report
+- Contributed to the development of the `Search` class and core functions including:
+`reserve_book`, `rate_book`, `validate_code`, `validate_isbn10_format`, `validate_isbn13_format`, and `generate_borrowing_report`
 - Provided leadership and accountability throughout the project timeline
 
-### Kaliza [Last Name] — Member System Developer
-- Developed the Member class with well-structured methods and reliable functionality
-- Authored key supporting functions: calculate_due_date, member_count, check_in_out_operations, and waitlist_management
+### Kaliza Mvunganyi — Member System Developer
+- Developed the `Member` class with well-structured methods and reliable functionality
+- Authored key supporting functions: `calculate_due_date`, `member_count`, `check_in_out_operations`, and `waitlist_management`
 - Consistently delivered accurate and on-time code submissions with minimal revision needed
 
-### Rood [Last Name] — Function Contributor
-- Contributed in making the Loan class and several functional components
-- Authored functions including: format_search_query, user_account, and recommend_books
+### Rood Cadet — Function Contributor
+- Contributed in making the `Loan` class and several functional components
+- Authored functions including: `format_search_query`, `user_account`, and `recommend_books`
 - Assisted in conceptual discussions and provided testing support during development phases

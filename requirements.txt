@@ -1,0 +1,38 @@
+# ==========================================================
+# Library Management System - Python Dependencies
+# ==========================================================
+# This project uses only Python’s standard library to demonstrate
+# object-oriented programming and system integration concepts.
+
+# Course: INST326 - Object-Oriented Programming for Information Science
+# Project: Library Management System - Group 5
+
+# CURRENT STATUS: No external dependencies required
+# --------------------------------------------------
+# The system relies solely on:
+# - datetime (for loan dates and due dates)
+# - typing (for type hints)
+# - random (for sample data and IDs)
+# - os, sys (for demo script imports)
+# - collections (for structured data)
+#
+# Benefits:
+# ✓ Simplicity and portability
+# ✓ Cross-platform compatibility
+# ✓ Demonstrates mastery of core Python
+
+# Python version requirement
+# Minimum Python 3.8
+# Recommended Python 3.10+
+
+# ==========================================================
+# INSTALLATION INSTRUCTIONS
+# ==========================================================
+# 1. Clone the repository
+#    git clone https://github.com/your-username/library-management-system.git
+# 2. Navigate into the directory
+#    cd library-management-system
+# 3. Run the demo
+#    python examples/demo_script.py
+# ==========================================================
+```

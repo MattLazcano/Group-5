@@ -22,9 +22,9 @@ class Search:
         """Reserve a book or add user to the waitlist."""
         return lib.reserve_book(member_id, book_id)
 
-    def manage_waitlist(self, isbn: str, user_id: str, action="add"):
+    def manage_waitlist(self, book_id: str, member_id: str, action="add"):
         """Add or notify members on waitlist."""
-        return lib.waitlist_management(isbn, user_id, action)
+        return lib.waitlist_management(book_id, member_id, action)
 
     def recommend_for_member(self, member_id: str, limit: int = 10):
         """Recommend books using Project 1 algorithm."""
