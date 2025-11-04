@@ -11,7 +11,7 @@ This document lists the public methods and attributes for each major class.
 ```python
 Book(book_id, title, author, genre, copies_total)
 ```
-# Attributes:
+### Attributes:
 
 - `book_id` (str)
 - `title` (str)
@@ -20,7 +20,7 @@ Book(book_id, title, author, genre, copies_total)
 - `copies_total` (int)
 - `copies_available` (int)
 
-# Key Methods:
+### Key Methods:
 
 - `check_availability()`
 - `add_rating(member_id, rating)`
@@ -37,7 +37,7 @@ Book(book_id, title, author, genre, copies_total)
 Member(member_id, name, email, active=True, tags=None, authors=None)
 ```
 
-# Attributes:
+### Attributes:
 
 - `member_id `(str)
 - `name` (str)
@@ -48,7 +48,7 @@ Member(member_id, name, email, active=True, tags=None, authors=None)
 - `preferences_tags` (set)
 - `preferences_authors` (set)
 
-# Key Methods:
+### Key Methods:
 
 - `validate_account()`
 - `pay_balance(amount)`
@@ -59,13 +59,13 @@ Member(member_id, name, email, active=True, tags=None, authors=None)
 ## Search Class
 **Module:** `src.search_class`
 
-# Constructor:
+### Constructor:
 
 ```python
 Search()
 ```
 
-# Key Methods:
+### Key Methods:
 
 - `find_books(query)`
 - `reserve(member_id, book_id)`
@@ -74,7 +74,6 @@ Search()
 - `normalize_query(query)`
 
 ## Loan Class
-
 **Module:** `src.loan_class`
 
 **Constructor:**
@@ -83,7 +82,7 @@ Search()
 Loan(member_id, book_id, borrow_date, loan_days)
 ```
 
-# Attributes:
+### Attributes:
 
 - `member_id` (str)
 - `book_id` (str)
@@ -92,7 +91,7 @@ Loan(member_id, book_id, borrow_date, loan_days)
 - `due_date` (datetime)
 - `returned` (bool)
 
-# Key Methods:
+### Key Methods:
 
 - `is_overdue()`
 - `generate_reports()`
