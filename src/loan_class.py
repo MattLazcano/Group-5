@@ -1,11 +1,11 @@
 from datetime import datetime
-from library_functions import calculate_due_date, generate_borrowing_report, automated_overdue_notifications
+from src import library_functions as lib
 
 class Loan:
     """Represents a loan transaction."""
     
     def __init__(self, member_id: str, book_id: str, borrow_date: datetime = None, loan_days: int = 14):
-        """Initialize a Loan record."""
+        """Initialize a Loan record and append to the global loan list."""
         if not member_id.strip() or not book_id.strip():
             raise ValueError("Member ID and Book ID cannot be empty.")
         
@@ -13,7 +13,19 @@ class Loan:
         self._book_id = book_id
         self._borrow_date = borrow_date or datetime.now()
         self._loan_days = loan_days
-        self._due_date = calculate_due_date(self._borrow_date, loan_days)
+        self._due_date = lib.calculate_due_date(self._borrow_date, loan_days)
+        self._returned = False
+
+        # Automatically add to the global loans list
+        loan_record = {
+            "member_id": self._member_id,
+            "book_id": self._book_id,
+            "borrow_date": self._borrow_date,
+            "due_date": self._due_date,
+            "returned": self._returned
+        }
+        lib.loans.append(loan_record)
+
     
     # -------------------------------
     # Properties
@@ -40,12 +52,12 @@ class Loan:
     @staticmethod
     def generate_reports():
         """Generate full borrowing report."""
-        return generate_borrowing_report()
+        return lib.generate_borrowing_report()
 
     @staticmethod
     def overdue_notifications():
         """Trigger automated overdue notifications."""
-        return automated_overdue_notifications()
+        return lib.automated_overdue_notifications()
     
     def __str__(self):
         status = "Overdue" if self.is_overdue() else "On time"

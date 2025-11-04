@@ -1,4 +1,4 @@
-from library_functions import user_account, check_in_out_operations, member_count
+from src import library_functions as lib
 
 class Member:
     """Represents a library member and account actions."""
@@ -16,6 +16,21 @@ class Member:
         self._name = name
         self._email = email
         self._active = active
+        self._balance = 0.0
+        self._loans = {}
+        self._preferences_tags = set()
+        self._preferences_authors = set()
+
+        # --- Append to global members dictionary ---
+        lib.members[self._member_id] = {
+            "name": self._name,
+            "email": self._email,
+            "active": self._active,
+            "balance": self._balance,
+            "loans": self._loans,
+            "preferences_tags": self._preferences_tags,
+            "preferences_authors": self._preferences_authors
+        }
     
     # -------------------------------
     # Properties
@@ -41,26 +56,26 @@ class Member:
     # -------------------------------
     def validate_account(self):
         """Validate member account using user_account()."""
-        return user_account(action="validate", user_id=self._member_id)
+        return lib.user_account(action="validate", user_id=self._member_id)
 
     def borrow_book(self, isbn: str):
         """Borrow a book."""
-        result = check_in_out_operations(self._member_id, isbn, action="borrow")
+        result = lib.check_in_out_operations(self._member_id, isbn, action="borrow")
         return f"{self._name} borrowed {isbn}, due {result['due_at'].date()}"
 
     def return_book(self, isbn: str):
         """Return a borrowed book."""
-        result = check_in_out_operations(self._member_id, isbn, action="return")
+        result = lib.check_in_out_operations(self._member_id, isbn, action="return")
         return f"{self._name} returned {isbn} on {result['returned_at'].date()}"
 
     def pay_balance(self, amount):
         """Pay a fine or balance using user_account()."""
-        return user_account(action="pay", user_id=self._member_id, pay_amount=amount)
+        return lib.user_account(action="pay", user_id=self._member_id, pay_amount=amount)
 
     @staticmethod
     def total_active_members():
         """Return total count of active members."""
-        return member_count(active_only=True)
+        return lib.member_count(active_only=True)
     
     def __str__(self):
         return f"{self._name} ({self._email}) - Active: {self._active}"

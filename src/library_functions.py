@@ -42,10 +42,10 @@ def schedule_reminder(member_id, book_id, due_date):
 # ----------------------------------------------------
 # MEDIUM (15–25 lines) Search and Filter Catalog (Matthew)
 # ----------------------------------------------------
-def search_catalog(query: str = "", authoer: str = "", genre: str = "", available: bool = None):
+def search_catalog(query: str = "", author: str = "", genre: str = "", available: bool = None):
     results = []
     q = query.strip().lower()
-    a = authoer.strip().lower()
+    a = author.strip().lower()
     g = genre.strip().lower()
     
     for item in catalog:
@@ -77,7 +77,7 @@ def automated_overdue_notifications(today: datetime | None = None, daily_fee: fl
         due_date = loan["due_date"]
         if not isinstance(due_date, datetime):
             continue
-        if due_date >= cutoff_date:
+        if due_date.date() >= cutoff_date:
             continue
 
         book = None
@@ -182,12 +182,10 @@ def validate_code(code_input):
     cleaned_code = code_input.replace("-", "").replace(" ", "").upper()
     code_length = len(cleaned_code)
 
-    if code_length == 10:
-        first_nine = cleaned_code[:-1]
-        last_char = cleaned_code[-1]
-        if first_nine.isdigit() and (last_char.isdigit() or last_char == 'X'):
-            return validate_isbn10_format(cleaned_code)
-    elif code_length == 13 and cleaned_code.isdigit():
+    # Treat numeric-only 10- or 13-digit codes as ISBNs only if they start with 0 or 9 (common ISBN prefixes)
+    if code_length == 10 and cleaned_code[0] in "09":
+        return validate_isbn10_format(cleaned_code)
+    elif code_length == 13 and cleaned_code[0] in "09":
         return validate_isbn13_format(cleaned_code)
     elif 5 <= code_length <= 20:
         return cleaned_code.isalnum()
@@ -278,7 +276,7 @@ def generate_borrowing_report(fine_per_day=0.5):
     return report
 
 # ----------------------------------------------------
-# Simple Function (5-10 lines) Calculate Due Date (Eliza)
+# Simple Function (5-10 lines) Calculate Due Date (kaliza)
 # Calculate the due date for a borrowed library item.
 # ----------------------------------------------------
 def calculate_due_date(borrow_date: datetime, loan_days: int = 14, skip_weekends: bool = True) -> datetime:
@@ -314,7 +312,7 @@ def calculate_due_date(borrow_date: datetime, loan_days: int = 14, skip_weekends
 
 
 # ----------------------------------------------------
-# SIMPLE Function (5-10 lines) Member Count (Eliza)
+# SIMPLE Function (5-10 lines) Member Count (Kaliza)
 # Return the total number of registered library members.
 # ----------------------------------------------------
 def member_count(active_only: bool = True) -> int:
@@ -343,7 +341,7 @@ def member_count(active_only: bool = True) -> int:
 
 
 # ----------------------------------------------------
-# MEDIUM (15–25 lines) check in/ check out operations (Eliza)
+# MEDIUM (15–25 lines) check in/ check out operations (Kaliza)
 # Used to track exact borrow and return times
 # ----------------------------------------------------
 def check_in_out_operations(user_id: str, isbn: str, action: str = "borrow", loan_days: int = 14) -> dict:
@@ -398,7 +396,7 @@ def check_in_out_operations(user_id: str, isbn: str, action: str = "borrow", loa
 
 
 # ----------------------------------------------------
-# MEDIUM (15–25 lines) Waitlist Management (Eliza)
+# MEDIUM (15–25 lines) Waitlist Management (Kaliza)
 # Add users to waitlist when a book is unavailable and notify them when available
 # ----------------------------------------------------
 def waitlist_management(isbn: str, user_id: str, action: str = "add") -> dict:
