@@ -18,5 +18,5 @@ Checks if a given book title is available in the catalog.
 
 **Example:**
 ```python
-is_book_available("The Great Gatsby")
+is_book_available("The hallow")
 
