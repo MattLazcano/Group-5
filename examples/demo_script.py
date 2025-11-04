@@ -67,7 +67,7 @@ def setup_sample_data():
 # ------------------------------------------------------------
 def demo_books_and_members():
     """Demonstrate creation and basic validation of Book and Member classes."""
-    print("📚 BOOK & MEMBER DEMO")
+    print("BOOK & MEMBER DEMO")
     print("=" * 50)
 
     print("Book Catalog before:", [b["title"] for b in lib.catalog])
@@ -95,7 +95,7 @@ def demo_books_and_members():
 
 def demo_search_and_reservations():
     """Showcase searching, reserving, and query normalization."""
-    print("🔍 SEARCH & RESERVATION DEMO")
+    print("SEARCH & RESERVATION DEMO")
     print("=" * 50)
     s = Search()
 
@@ -120,7 +120,7 @@ def demo_search_and_reservations():
 
 def demo_loans_and_reports():
     """Demonstrate loan creation, overdue checks, and reporting."""
-    print("📆 LOAN & REPORT DEMO")
+    print("LOAN & REPORT DEMO")
     print("=" * 50)
     l = Loan(member_id="M1", book_id="1000000003")  # Matthew borrows The Hobbit
     print("Loan record created:", l)
@@ -139,7 +139,7 @@ def demo_loans_and_reports():
 
 def demo_ratings():
     """Demonstrate book rating and average updates."""
-    print("⭐ RATING SYSTEM DEMO")
+    print("RATING SYSTEM DEMO")
     print("=" * 50)
 
     dune = next((b for b in lib.catalog if b["id"] == "1000000001"), None)

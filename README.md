@@ -48,7 +48,7 @@ from src import library_functions as lib
 ```
 
 ## Quick Usage Examples
-### 📘 Book and Member Creation
+### Book and Member Creation
 ``` python
 from src.book_class import Book
 from src.member_class import Member
@@ -61,7 +61,7 @@ print(new_book)
 print(new_member)
 ```
 
-### 🔍 Searching the Catalog
+### Searching the Catalog
 ```python
 from src.search_class import Search
 
@@ -71,13 +71,13 @@ for r in results:
     print(r["title"], "-", r["author"])
 ```
 
-### 📚 Reserving and Waitlisting
+### Reserving and Waitlisting
 ```python
 print(s.reserve("M1", "1000000002"))
 print(s.manage_waitlist("1000000001", "M4", "add"))
 ```
 
-### 📆 Loan Management
+### Loan Management
 ```python
 from src.loan_class import Loan
 from datetime import datetime
@@ -87,7 +87,7 @@ print(loan)
 print("Overdue:", loan.is_overdue())
 ```
 
-### ⭐ Ratings
+### Ratings
 ```python
 print(lib.rate_book("M1", "1000000001", 5))
 print(lib.rate_book("M3", "1000000001", 4))
@@ -97,7 +97,7 @@ print(lib.average_ratings)
 ## Function Library Overview
 The function library contains over 20 integrated utilities, organized across four main domains:
 
-### 📚 Book Management
+### Book Management
 - `validate_code()` — Ensures valid book ID or ISBN format
 
 - `is_book_available()` — Checks catalog for availability
@@ -106,7 +106,7 @@ The function library contains over 20 integrated utilities, organized across fou
 
 - `update_catalog()` — Adds new book records to the global catalog
 
-### 👤 Member Management
+### Member Management
 - `add_member()` — Adds new library members
 
 - `update_member_balance()` — Adjusts user account balances
@@ -115,7 +115,7 @@ The function library contains over 20 integrated utilities, organized across fou
 
 - `pay_balance()` — Simulates payment processing
 
-### 🔍 Search and Recommendation
+### Search and Recommendation
 - search_catalog() — Keyword, author, and genre search
 
 - reserve_book() — Places a member on a waitlist or reserves a copy
@@ -124,7 +124,7 @@ The function library contains over 20 integrated utilities, organized across fou
 
 - recommend_books() — Recommends titles based on preferences and tags
 
-### 📆 Loan and Reporting
+### Loan and Reporting
 - calculate_due_date() — Generates loan due dates
 
 - generate_borrowing_report() — Summarizes borrowing statistics
