@@ -171,7 +171,7 @@ def main():
     demo_ratings()
 
     print("=" * 60)
-    print("🎉 DEMO COMPLETE! The library system is fully functional.")
+    print("DEMO COMPLETE! The library system is fully functional.")
     print("=" * 60)
 
 
